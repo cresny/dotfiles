@@ -1,0 +1,43 @@
+
+colorscheme codedark
+"colorscheme desert
+
+syntax enable
+
+set tabstop=4
+
+set softtabstop=4
+
+set expandtab
+
+" necessary for delete key backwards delete
+set backspace=2
+
+filetype indent on
+filetype plugin on
+
+set number
+
+" show choices for autocompletion when opening files
+set wildmenu
+
+let mapleader=","
+
+"enable subfolder search
+set path+=**
+
+" toggle gundo
+nnoremap <leader>u :GundoToggle<CR>
+
+
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
+
+" turn off search highlight - Yay!
+nnoremap <leader><space> :nohlsearch<CR>
+
+" Go command key bindings
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+
