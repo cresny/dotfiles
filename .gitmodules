@@ -1,0 +1,9 @@
+[submodule "vim/pack/cresny/start/vim-commentary"]
+	path = vim/pack/cresny/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/pack/cresny/start/vim-code-dark"]
+	path = vim/pack/cresny/start/vim-code-dark
+	url = https://github.com/tomasiser/vim-code-dark
+[submodule "vim/pack/cresny/start/vim-go"]
+	path = vim/pack/cresny/start/vim-go
+	url = https://github.com/fatih/vim-go
