@@ -10,3 +10,6 @@
 [submodule "vim/pack/cresny/start/gundo.vim"]
 	path = vim/pack/cresny/start/gundo.vim
 	url = https://github.com/sjl/gundo.vim
+[submodule "vim/pack/cresny/start/vim-system-copy"]
+	path = vim/pack/cresny/start/vim-system-copy
+	url = https://github.com/christoomey/vim-system-copy
