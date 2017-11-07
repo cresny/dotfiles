@@ -13,3 +13,9 @@
 [submodule "vim/pack/cresny/start/vim-system-copy"]
 	path = vim/pack/cresny/start/vim-system-copy
 	url = https://github.com/christoomey/vim-system-copy
+[submodule "vim/pack/cresny/start/vim-repeat"]
+	path = vim/pack/cresny/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule "vim/pack/cresny/start/vim-surround"]
+	path = vim/pack/cresny/start/vim-surround
+	url = https://github.com/tpope/vim-surround
