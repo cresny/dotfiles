@@ -8,7 +8,12 @@ set tabstop=4
 
 set softtabstop=4
 
+set shiftwidth=4
+
 set expandtab
+
+
+set relativenumber
 
 " necessary for delete key backwards delete
 set backspace=2
@@ -33,11 +38,22 @@ nnoremap <leader>u :GundoToggle<CR>
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-
 " turn off search highlight - Yay!
 nnoremap <leader><space> :nohlsearch<CR>
+
 
 " Go command key bindings
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 
+set autowrite
+
+autocmd FileType go nmap <C-n> :cnext<CR>
+autocmd FileType go nmap <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+" turn off backup, swap, etc. I sometimes open up more thank one session and
+" it adds confusion. Also we have git!
+set nobackup
+set nowb
+set noswapfile
