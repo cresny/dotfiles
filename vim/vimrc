@@ -12,7 +12,6 @@ set shiftwidth=4
 
 set expandtab
 
-
 set relativenumber
 
 " necessary for delete key backwards delete
