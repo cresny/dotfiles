@@ -16,6 +16,9 @@ Plug 'fatih/vim-go', { 'for':'go'}
 Plug 'JamshedVesuna/vim-markdown-preview', {'for':'md'}
 call plug#end()
 
+set t_Co=256
+set t_ut= 
+
 colorscheme codedark
 "colorscheme desert
 
