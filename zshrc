@@ -1,11 +1,14 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/cresnick/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+            source /etc/profile.d/vte.sh
+fi
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -52,13 +55,11 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -81,18 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export GOPATH=$HOME/work/reporting-streaming-infrastruct/go
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:$GOPATH/bin:$PATH"
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-alias ls="ls --color=auto"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home
-export PATH=$PATH:/usr/local/go/bin:/usr/local/opt:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-autoload bashcompinit
-bashcompinit
-. $HOME/bin/spotty.sh
 # $1 = type; 0 - both, 1 - tab, 2 - title
 # rest = text
 setTerminalText () {  
@@ -103,4 +92,4 @@ setTerminalText () {
 stt_both  () { setTerminalText 0 $@; }  
 stt_tab   () { setTerminalText 1 $@; }  
 stt_title () { setTerminalText 2 $@; }  
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:/Users/cresnick/bin:/Users/cresnick/work/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/opt:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin:/Users/cresnick/.nexustools
+alias mmd="cd $HOME/go/src/github.com/MediaMath"
