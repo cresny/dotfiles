@@ -8,12 +8,11 @@ endif
 call plug#begin('~/.vim/bundle')
 Plug 'cresny/vim-code-dark'
 Plug 'sjl/gundo.vim'
-Plug 'christoomey/vim-system-copy'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go', { 'for':'go'}
-Plug 'JamshedVesuna/vim-markdown-preview', {'for':'md'}
+Plug 'JamshedVesuna/vim-markdown-preview'
 call plug#end()
 
 set t_Co=256
@@ -31,6 +30,8 @@ set softtabstop=4
 set shiftwidth=4
 
 set expandtab
+
+set mouse=a
 
 set relativenumber
 
@@ -57,7 +58,7 @@ nnoremap <leader>u :GundoToggle<CR>
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-" turn off search highlight - Yay!
+" turn off search highlight
 nnoremap <leader><space> :nohlsearch<CR>
 
 
@@ -76,3 +77,11 @@ nnoremap <leader>a :cclose<CR>
 set nobackup
 set nowb
 set noswapfile
+
+" Golang json macro -- use @j over struct field to add lcase json tag
+let @j='yiw/$a `json:"p?"€kr~/$a"`'
+
+let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_github=1
+
+vnoremap <C-c> "*y    

@@ -1,0 +1,2 @@
+pgrep -f 'ssh \-fN reporting-dev' | xargs kill
+ssh -fN reporting-dev 2>/dev/null
