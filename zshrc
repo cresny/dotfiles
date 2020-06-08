@@ -5,6 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
+export TERM="xterm-256color"
+#ZSH_THEME="robbyrussell"
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
             source /etc/profile.d/vte.sh
@@ -82,6 +84,17 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export GOPATH=$HOME/go
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:$GOPATH/bin:$PATH"
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+# alias ls="ls --color=auto"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+export PATH=$PATH:/usr/local/go/bin:/usr/local/opt:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+autoload bashcompinit
+bashcompinit
 # $1 = type; 0 - both, 1 - tab, 2 - title
 # rest = text
 setTerminalText () {  
@@ -92,4 +105,31 @@ setTerminalText () {
 stt_both  () { setTerminalText 0 $@; }  
 stt_tab   () { setTerminalText 1 $@; }  
 stt_title () { setTerminalText 2 $@; }  
+export PATH=/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:/Users/cresnick/bin:/Users/cresnick/work/go/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/opt:/Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin:/Users/cresnick/.nexustools:/Users/cresnick/Library/Python/3.7/bin:$HOME/tools/apache-maven-3.2.5/bin
+alias spd="cd ~/go/src/github.com/MediaMath/spotty"
+alias idd="cd ~/go/src/github.com/MediaMath/reporting-streaming-infrastruct"
+alias vi=/usr/local/bin/nvim
 alias mmd="cd $HOME/go/src/github.com/MediaMath"
+alias jd="cd $HOME/work"
+alias grep=ggrep
+alias gs="git status"
+source ~/af
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+alias ls="ls --color=auto"
+export SBT_OPTS="-Xmx5G -Xss2M -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+UseCompressedOops"
+function powerline_precmd() {
+    PS1="$($GOPATH/bin/powerline-go -error $? -shell zsh)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
