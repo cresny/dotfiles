@@ -2,3 +2,4 @@ autoload
 bundle
 pack
 .netrwhist
+.DS_Store
